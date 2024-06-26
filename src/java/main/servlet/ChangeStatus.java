@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import main.CfgHandler;
 import org.apache.commons.lang3.StringUtils;
 
 public class ChangeStatus extends HttpServlet {
@@ -22,7 +23,6 @@ public class ChangeStatus extends HttpServlet {
             String window = request.getParameter("window");
             String host = request.getParameter("host");
             String port = request.getParameter("port");
-            String auto_call = "1";
             if (StringUtils.isNotBlank(status)) {
                 request.getSession().setAttribute("status", status);
             }
@@ -38,9 +38,6 @@ public class ChangeStatus extends HttpServlet {
             if (StringUtils.isNotBlank(branchId)) {
                 request.getSession().setAttribute("branchId", branchId);
             }
-            if (StringUtils.isNotBlank(auto_call)) {
-                request.getSession().setAttribute("auto_call", auto_call);
-            }
             if (StringUtils.isNotBlank(window)) {
                 request.getSession().setAttribute("windowId", window);
             }
@@ -53,9 +50,10 @@ public class ChangeStatus extends HttpServlet {
             if (StringUtils.isNotBlank(port)) {
                 request.getSession().setAttribute("port", port);
             }
-            request.getSession().setAttribute("auto_deal", 1);
-            request.getSession().setAttribute("auto_call_time", 4);
-            request.getSession().setAttribute("call_wait_time", 10);
+            request.getSession().setAttribute("auto_call", CfgHandler.AUTO_CALL_STATUS);
+            request.getSession().setAttribute("auto_deal", CfgHandler.AUTO_DEAL_STATUS);
+            request.getSession().setAttribute("auto_call_time", CfgHandler.AUTO_CALL_TIME);
+            request.getSession().setAttribute("call_wait_time", CfgHandler.AUTO_WAIT_TIME);
 
             System.err.println("QCall.ChangeStatus.status = " + status);
         }

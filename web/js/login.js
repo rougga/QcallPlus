@@ -4,6 +4,14 @@ $(document).ready(function () {
         $("#err").hide();
     });
 
+
+    $("#selectWindowSelect").on("change", function () {
+        $("#window").val($(this).val());
+        $("#windowText").val($("#selectWindowSelect option:selected").text());
+    });
+
+
+
     $("#submit").on('click', function () {
         var url = getPath().base + "client/login";
         var par = {};

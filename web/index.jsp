@@ -46,7 +46,7 @@
 
                                         PgConnection con = new PgConnection();
                                         ResultSet r = con.getStatement().executeQuery("select id,name,win_number,status from t_window where status = 1 order by win_number;");
-                                        if (r.next()) {
+                                        while (r.next()) {
                                 %>
                                 <option value="<%=r.getString("id")%>"><%=r.getString("name")%></option>
                                 <%
@@ -63,17 +63,18 @@
                             <input type="hidden" id="windowText" value=""/>
                             <input type="hidden" id="branchId" class="form-control"/>
                         </div>
+
+
+
+                        <button type="button" id="submit"  class="btn btn-success text-white"><img src="img/login.png" alt=""/>  CONNECTER </button>
+
+                        <a href="#" id="settingsBtn" class="btn btn-primary"><img src="img/setting.png" alt=""/></a>
+                    </form>
                 </div>
-
-                <input type="hidden" id="branchId" class="form-control"/>
-                <button type="button" id="submit"  class="btn btn-success text-white"><img src="img/login.png" alt=""/>  CONNECTER </button>
-
-                <a href="#" id="settingsBtn" class="btn btn-primary"><img src="img/setting.png" alt=""/></a>
-                </form>
-
                 <div class="col-12 forgot">
                     <a href="#">Mot de passe oublié ?</a>
                 </div>
+
             </div>
 
             <div>

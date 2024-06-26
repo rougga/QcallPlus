@@ -6,7 +6,7 @@
 </footer>
 <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
     <div class="modal-dialog ">
-        <div class="modal-content text-white" style="background-color: #508CA4">
+        <div class="modal-content text-white bg-dark" style="">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Les Paramètres</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

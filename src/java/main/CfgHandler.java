@@ -23,6 +23,10 @@ public class CfgHandler {
     public static String DB_DATABASE = "postgres";
     public static String DB_USER = "honyi";
     public static String DB_PASSWORD = "honyi123";
+    public static Object AUTO_CALL_STATUS = 0;
+    public static Object AUTO_CALL_TIME = 4 ;
+    public static Object AUTO_WAIT_TIME = 10;
+    public static Object AUTO_DEAL_STATUS = 1;
     
     public CfgHandler()  {
     }
